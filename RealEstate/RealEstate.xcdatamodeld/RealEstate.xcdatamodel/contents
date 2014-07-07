@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="12F37" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Facility" representedClassName="Facility" syncable="YES">
+        <attribute name="datecreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateupdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="facilityid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Favorites" representedClassName="Favorites" syncable="YES">
+        <attribute name="favoritesid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="propertyid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="propertyInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Property" inverseName="favoritesInfo" inverseEntity="Property" syncable="YES"/>
+        <relationship name="userInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="favoritesInfo" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="Furnish" representedClassName="Furnish" syncable="YES">
+        <attribute name="datecreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateupdated" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="furnishid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="MetaProperty" representedClassName="MetaProperty" syncable="YES">
+        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bathrooms" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="bedrooms" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="built_up" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="datecreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateupdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="land_area" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="propertyid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zipcode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="facilityInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MetaPropertyFacility" inverseName="propertyInfo" inverseEntity="MetaPropertyFacility" syncable="YES"/>
+    </entity>
+    <entity name="MetaPropertyFacility" representedClassName="MetaPropertyFacility" syncable="YES">
+        <attribute name="datecreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateupdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="facilityid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="propertyid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="propertyInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MetaProperty" inverseName="facilityInfo" inverseEntity="MetaProperty" syncable="YES"/>
+    </entity>
+    <entity name="Nationality" representedClassName="Nationality" syncable="YES">
+        <attribute name="datecreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateupdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nationalityid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Notification" representedClassName="Notification" syncable="YES">
+        <attribute name="datecreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="notifyString" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Offer" representedClassName="Offer" syncable="YES">
+        <attribute name="datecreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateupdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="offerid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="prefertimestart" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="propertyid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="reason" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="term" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="propertyInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Property" inverseName="offerInfo" inverseEntity="Property" syncable="YES"/>
+        <relationship name="timeInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OfferTime" inverseName="offerInfo" inverseEntity="OfferTime" syncable="YES"/>
+        <relationship name="userInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="offerInfo" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="OfferTime" representedClassName="OfferTime" syncable="YES">
+        <attribute name="offerid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="timeid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="weekday" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="offerInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Offer" inverseName="timeInfo" inverseEntity="Offer" syncable="YES"/>
+    </entity>
+    <entity name="Postcode" representedClassName="Postcode" syncable="YES">
+        <attribute name="area" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="post_office" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postcode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state_code" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="stateInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="State" inverseName="codeInfo" inverseEntity="State" syncable="YES"/>
+    </entity>
+    <entity name="Property" representedClassName="Property" syncable="YES">
+        <attribute name="address1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="availability" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="datecreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateupdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="describe" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="disPrice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="furnish_type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nationality" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parkings" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="prefertimestart" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="propertyid" optional="YES" attributeType="Integer 32" defaultValueString="1" syncable="YES"/>
+        <attribute name="quality" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="race" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rental" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rooms" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sqft" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toilets" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userphoto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userprivacy" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="zipcode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="facilityInfo" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PropertyFacility" inverseName="propertyInfo" inverseEntity="PropertyFacility" syncable="YES"/>
+        <relationship name="favoritesInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Favorites" inverseName="propertyInfo" inverseEntity="Favorites" syncable="YES"/>
+        <relationship name="furnishInfo" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PropertyFurnish" inverseName="propertyInfo" inverseEntity="PropertyFurnish" syncable="YES"/>
+        <relationship name="imgInfo" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PropertyImage" inverseName="propertyInfo" inverseEntity="PropertyImage" syncable="YES"/>
+        <relationship name="offerInfo" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Offer" inverseName="propertyInfo" inverseEntity="Offer" syncable="YES"/>
+        <relationship name="userInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="propertyInfo" inverseEntity="Users" syncable="YES"/>
+    </entity>
+    <entity name="PropertyFacility" representedClassName="PropertyFacility" syncable="YES">
+        <attribute name="facility_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="facilityid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="propertyfacilityid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="propertyid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="propertyInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Property" inverseName="facilityInfo" inverseEntity="Property" syncable="YES"/>
+    </entity>
+    <entity name="PropertyFurnish" representedClassName="PropertyFurnish" syncable="YES">
+        <attribute name="furnish_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="furnishid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="propertyfurnishid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="propertyid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="propertyInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Property" inverseName="furnishInfo" inverseEntity="Property" syncable="YES"/>
+    </entity>
+    <entity name="PropertyImage" representedClassName="PropertyImage" syncable="YES">
+        <attribute name="data" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="datecreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateupdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="imageid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="propertyid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="propertyInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Property" inverseName="imgInfo" inverseEntity="Property" syncable="YES"/>
+    </entity>
+    <entity name="Race" representedClassName="Race" syncable="YES">
+        <attribute name="datecreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateupdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="raceid" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="State" representedClassName="State" syncable="YES">
+        <attribute name="state_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="codeInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Postcode" inverseName="stateInfo" inverseEntity="Postcode" syncable="YES"/>
+    </entity>
+    <entity name="Users" representedClassName="Users" syncable="YES">
+        <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="datecreated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="dateupdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="device_token" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="deviceToken" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ip_address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nationality" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="occupation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="privacy" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="quality" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="race" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="user_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="favoritesInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Favorites" inverseName="userInfo" inverseEntity="Favorites" syncable="YES"/>
+        <relationship name="offerInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Offer" inverseName="userInfo" inverseEntity="Offer" syncable="YES"/>
+        <relationship name="propertyInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Property" inverseName="userInfo" inverseEntity="Property" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Facility" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="Favorites" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="Furnish" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="MetaProperty" positionX="0" positionY="0" width="128" height="270"/>
+        <element name="MetaPropertyFacility" positionX="0" positionY="0" width="128" height="150"/>
+        <element name="Nationality" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="Notification" positionX="9" positionY="153" width="128" height="88"/>
+        <element name="Offer" positionX="0" positionY="0" width="128" height="255"/>
+        <element name="OfferTime" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="Postcode" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="Property" positionX="0" positionY="0" width="128" height="615"/>
+        <element name="PropertyFacility" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="PropertyFurnish" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="PropertyImage" positionX="0" positionY="0" width="128" height="150"/>
+        <element name="Race" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="State" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="Users" positionX="0" positionY="0" width="128" height="390"/>
+    </elements>
+</model>
